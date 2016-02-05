@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
+        <style>
+            body {
+                font-family: 'Nunito', sans-serif;
+                font-size: 16px;
+                color:#666;
+            }
+
+            #nav, #content, #words, .text, #image-container, #gallery {
+                width: 100%;
+                display: inline-block;
+                box-sizing: border-box;
+                padding: 0% 5% 2% 5%;
+            }
+
+            #gallery {
+                text-align: center;
+            }
+
+            #gallery .text {
+                text-align: left;
+            }
+
+            #logo, #menu {
+                text-align: center;
+                margin-bottom: 2%;
+            }
+
+            #logo img {
+                width:20%;
+            }
+            #nav {
+                width:100%;
+            }
+
+            #nav a {
+                text-decoration: none;
+                color: rgb(71, 94, 147);
+                border-bottom: .2em solid rgba(71, 94, 147, 0.3);
+                margin: 0 5%;
+                font-size:1.6em;
+                transition: border-color 0.5s;
+                -webkit-transition: border-color 0.5s;
+                -moz-transition: border-color 0.5s;
+                -ms-transform: border-color 0.5s;
+                -o-transform: border-color 0.5s;
+                display:inline-block;
+            }
+
+            #nav a:hover {
+                border-color: RGB(70, 83, 128);
+            }
+
+            img {
+                width: 100%;   
+            }
+
+            h1 {
+                line-height: 1;
+            }
+
+            section {
+                margin: 1em 0;
+            }
+
+            #gallery .gallery-image {
+                width:45%;
+                display:inline-block;
+                margin:0;
+                padding:0;
+                cursor: default;
+            }
+
+            #gallery .gallery-image .image-info{
+                display:none;
+            }
+
+            /* Tablet */
+            @media only screen and (min-width: 768px) {
+                body {
+                    font-size 18px;
+                }
+                
+                #words, .text {
+                    font-size: 1.1em;
+                }
+                
+                #nav {
+                    display: flex;
+                    align-items: center;
+                    font-size:1.3em;
+                }
+                
+                #nav a{
+                    font-size:1.4em;
+                }
+                
+                #logo {
+                    width:10%;
+                    float:left;
+                }
+                
+                #logo img {
+                    width:100%;
+                }
+                
+                #menu {
+                    width: 90%;
+                    text-align: right;
+                }
+                
+                #content {
+                    display:flex;
+                    align-items: center;
+                }
+                
+                #gallery .gallery-image {
+                    width:30%;
+                }
+            }
+
+            /* Desktop */
+            @media only screen and (min-width: 1200px){
+                #gallery .gallery-image {
+                    width: 24%;
+                }
+                
+                body {
+                    font-size:20px
+                }
+                
+                #words, .text {
+                    font-size: 1.2em;
+                }
+                
+                #content #image-container {
+                    padding: 0px;
+                }
+                
+                #gallery .gallery-image {
+                    position:relative;
+                }
+
+                /* I added a hover effect for the images in the gallery just to try out the filter effects for photos. */
+                #gallery .gallery-image .image-info {
+                    display:block;
+                    position:absolute;
+                    top: 35%;
+                    width:100%;
+                    color:rgba(255,255,255,0);
+                    font-size:1.8em;
+                    -webkit-transition: color 0.5s;
+                    -moz-transition: color 0.5s;
+                    max-height:41%;
+                    overflow:hidden;
+                }
+
+                #gallery .gallery-image img{
+                    -webkit-transition: -webkit-filter 0.5s;
+                    -moz-transition: -moz-filter 0.5s;
+
+                    -webkit-filter: blur(0px);
+                    -moz-filter: blur(0px);
+                }
+
+                #gallery .gallery-image:hover img{
+                    -webkit-filter: blur(10px);
+                    -moz-filter: blur(10px);
+                }
+
+                #gallery .gallery-image:hover .image-info {
+                    color:rgba(255,255,255,1);
+                }
+
+                #gallery .gallery-image .image-description {
+                    max-width:80%;
+                    display:inline-block;
+                    text-align:center;
+                    font-size:0.5em;
+                    margin:2% 0;
+                }
+            }
+        </style>
+        
+      <title>Mobile First Website</title>
+    </head>
+
+    <body>
+      <section id="nav">
+        <div id="logo">
+          <img src="https://camo.githubusercontent.com/b5c0dfdd60a45dc796aa603ffbe38540d0690076/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f62756464792e737667">
+        </div>
+        <div id="menu">
+          <a class="navlink" href="">Link</a>
+          <a class="navlink" href="">Link</a>
+          <a class="navlink" href="">Link</a>
+        </div>
+      </section>
+
+      <section id="content">
+        <div id="image-container">
+          <img src="https://d13yacurqjgara.cloudfront.net/users/9048/screenshots/1419531/landscape-line.png">
+        </div>
+        <div id="words" class="text">
+          <h1>Welcome</h1>
+          <P>
+            I think there's an artist hidden in the bottom of every single one of us. Nice little clouds playing around in the sky. How do you make a round circle with a square knife? That's your challenge for the day.
+          </P>
+        </div>
+      </section>
+
+      <!-- I added some extra info about the pictures in the gallery when I was playing around with the CSS. I hope that's alright! --> 
+      <section id="gallery">
+        <div class="text">
+          <h1>Gallery</h1>
+        </div>
+        <div class="gallery-image">
+            <img src="https://camo.githubusercontent.com/7ce4dcf53959c7e1f44cedb4afe0b9dbce8d9889/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f6461742e737667">
+            <div class="image-info">
+                <div class="image-name">
+                    Image Name
+                </div>
+                <div class="image-description">
+                    Image description goes here, lorem ipsum etc. 
+                </div>
+            </div>
+        </div>
+        <div class="gallery-image">
+            <img src="https://camo.githubusercontent.com/7ce4dcf53959c7e1f44cedb4afe0b9dbce8d9889/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f6461742e737667">
+            <div class="image-info">
+                <div class="image-name">
+                    Image Name
+                </div>
+                <div class="image-description">
+                    Image description goes here, lorem ipsum etc. 
+                </div>
+            </div>
+        </div>
+        <div class="gallery-image">
+            <img src="https://camo.githubusercontent.com/7ce4dcf53959c7e1f44cedb4afe0b9dbce8d9889/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f6461742e737667">
+            <div class="image-info">
+                <div class="image-name">
+                    Image Name
+                </div>
+                <div class="image-description">
+                    Image description goes here, lorem ipsum etc. 
+                </div>
+            </div>
+        </div>
+        <div class="gallery-image">
+            <img src="https://camo.githubusercontent.com/7ce4dcf53959c7e1f44cedb4afe0b9dbce8d9889/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f6461742e737667">
+            <div class="image-info">
+                <div class="image-name">
+                    Image Name
+                </div>
+                <div class="image-description">
+                    Image description goes here, lorem ipsum etc. 
+                </div>
+            </div>
+        </div>
+        <div class="gallery-image">
+            <img src="https://camo.githubusercontent.com/7ce4dcf53959c7e1f44cedb4afe0b9dbce8d9889/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f6461742e737667">
+            <div class="image-info">
+                <div class="image-name">
+                    Image Name
+                </div>
+                <div class="image-description">
+                    Image description goes here, lorem ipsum etc. 
+                </div>
+            </div>
+        </div>
+        <div class="gallery-image">
+            <img src="https://camo.githubusercontent.com/7ce4dcf53959c7e1f44cedb4afe0b9dbce8d9889/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f6461742e737667">
+            <div class="image-info">
+                <div class="image-name">
+                    Image Name
+                </div>
+                <div class="image-description">
+                    Image description goes here, lorem ipsum etc. 
+                </div>
+            </div>
+        </div>
+        <div class="gallery-image">
+            <img src="https://camo.githubusercontent.com/7ce4dcf53959c7e1f44cedb4afe0b9dbce8d9889/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f6461742e737667">
+            <div class="image-info">
+                <div class="image-name">
+                    Image Name
+                </div>
+                <div class="image-description">
+                    Image description goes here, lorem ipsum etc. 
+                </div>
+            </div>
+        </div>
+        <div class="gallery-image">
+            <img src="https://camo.githubusercontent.com/7ce4dcf53959c7e1f44cedb4afe0b9dbce8d9889/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f6461742e737667">
+            <div class="image-info">
+                <div class="image-name">
+                    Image Name
+                </div>
+                <div class="image-description">
+                    Image description goes here, lorem ipsum etc. 
+                </div>
+            </div>
+        </div>
+        <div class="gallery-image">
+            <img src="https://camo.githubusercontent.com/7ce4dcf53959c7e1f44cedb4afe0b9dbce8d9889/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f6461742e737667">
+            <div class="image-info">
+                <div class="image-name">
+                    Image Name
+                </div>
+                <div class="image-description">
+                    Image description goes here, lorem ipsum etc. 
+                </div>
+            </div>
+        </div>
+        <div class="gallery-image">
+            <img src="https://camo.githubusercontent.com/7ce4dcf53959c7e1f44cedb4afe0b9dbce8d9889/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f6461742e737667">
+            <div class="image-info">
+                <div class="image-name">
+                    Image Name
+                </div>
+                <div class="image-description">
+                    Image description goes here, lorem ipsum etc. 
+                </div>
+            </div>
+        </div>
+        <div class="gallery-image">
+            <img src="https://camo.githubusercontent.com/7ce4dcf53959c7e1f44cedb4afe0b9dbce8d9889/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f6461742e737667">
+            <div class="image-info">
+                <div class="image-name">
+                    Image Name
+                </div>
+                <div class="image-description">
+                    Image description goes here, lorem ipsum etc. 
+                </div>
+            </div>
+        </div>
+        <div class="gallery-image">
+            <img src="https://camo.githubusercontent.com/7ce4dcf53959c7e1f44cedb4afe0b9dbce8d9889/687474703a2f2f737667706f726e2e636f6d2f6c6f676f732f6461742e737667">
+            <div class="image-info">
+                <div class="image-name">
+                    Image Name
+                </div>
+                <div class="image-description">
+                    Image description goes here, lorem ipsum etc. 
+                </div>
+            </div>
+        </div>
+      </section>
+    </body>
+
+</html>
