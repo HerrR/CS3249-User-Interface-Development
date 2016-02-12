@@ -28,14 +28,13 @@ h4,
 h5,
 h6,
 p {
-    /*margin-top: 0;*/
     padding-right: 15px;
     padding-left: 15px;
 }
 
 img {
-    max-width:100%;
     max-height:100%;
+    width:100%;
 }
 
 a img {
@@ -52,28 +51,19 @@ a:visited {
 }
 
 header {
-    /*text-align: center;*/
     background-color: #fff;
-    /*background-image: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/symphony.png');*/
     overflow: hidden;
     width:100%;
 }
 
 header h1 {
     margin: 0;
-    /*font-size: 62px;*/
 }
 
 header img {
     max-width:100%;
     box-sizing:border-box;
     padding: 4% 2.5%;
-}
-
-nav {
-/*    clear: left;
-    float: left;*/
-    /*width: 180px;*/
 }
 
 nav ul {
@@ -83,14 +73,12 @@ nav ul {
 nav ul li {
     background-color: rgba(255, 255, 255, 0.80);
     margin-bottom: 3px;
-    font-size: 16px;
 }
 
 nav ul a:link,
 nav ul a:visited {
     padding: 5px 5px 5px 15px;
     display: block;
-    /*width: 160px;*/
     color: #666;
 }
 
@@ -103,17 +91,16 @@ nav ul a:focus {
 
 article {
     padding: 0;
-    /*width: 600px;*/
     float: left;
     background-color: #FFFFFF;
 }
 
 article h1 {
-    font-size: 36px;
+    /*font-size: 36px;*/
 }
 
 article h2 {
-    font-size: 24px;
+    /*font-size: 24px;*/
     margin-bottom: 0;
     color: #06b0c9;
 }
@@ -125,7 +112,7 @@ aside {
 }
 
 aside h1 {
-    font-size: 24px;
+    /*font-size: 24px;*/
 }
 
 section {
@@ -143,11 +130,10 @@ footer {
 
 
 .promise-container {
+    font-size:16px;
     display: inline-block;
-    /*width: 200px;*/
-    /*height: 200px;*/
     background: url('../img/circle.jpg');
-    background-size: 175px 175px;
+    background-size:contain;
     background-repeat: no-repeat;
     background-position: center;
     width:33.33%;
@@ -155,23 +141,25 @@ footer {
 
 .has-inline-elements {
     font-size: 0px;
+    text-align: center;
 }
 
 .promise {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
+    display: inline-block;
+    vertical-align: middle;
     color: white;
-    font-size: 16px;
-    padding: 50%;
+    text-align: center;
+    padding: 50% 10% 50% 10%;
 }
 
 .fancybox-title {
-    font: 18px/1.6 lato;
+    font: 18px/1.6 'Lato', Sans-Serif;
     text-align: center;
+}
+
+.rotate-img {
+    display:block;
+    margin:auto;
 }
 
 .rotate-img img {
@@ -181,6 +169,9 @@ footer {
 }
 
 /* Custom CSS */
+* {
+    max-width:100%;
+}
 .logo {
     display: inline-block;
     width:60%;
@@ -202,23 +193,11 @@ aside {
     display:inline-block;
 }
 
-/*.mobile-menu {
-    width:100%;
-    background-color:rgba(255,255,255,0.8);
-    text-align:right;
-}*/
-
-/*.mobile-menu img {
-    box-sizing:border-box;
-    height:35px;
-    margin:15px 25px;
-    cursor:pointer;
-}*/
-
 .menuIcon {
     width: 15%;
     float: right;
     margin-right: 3%;
+    cursor:pointer;
 }
 
 nav.open {
@@ -229,6 +208,29 @@ nav.closed {
     height:0px;
 }
 
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .menuIcon {
+        padding:3.5%;
+        width:13%;
+    }
+
+    .logo {
+        padding:2% 0 2% 2.5%;
+        width:auto;
+        height:100px;
+    }
+
+    .rotate-img {
+        width:60%;
+    }
+
+    .promise {
+        font-size:1.7em;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
 @media screen and (min-width:992px){
     .menuIcon {
         display: none;
@@ -240,7 +242,6 @@ nav.closed {
     }
 
     header {
-        /*text-align: center;*/
         background-image: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/symphony.png');
     }
 
@@ -249,6 +250,42 @@ nav.closed {
     }
 
     aside {
-        font-size: 0.7em;
+        font-size: 0.9em;
+    }
+
+    .rotate-img {
+        width:100%;
+    }
+
+    .promise {
+        font-size:1.5em;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    body {
+        font-size:1.7em;
+    }
+    .logo {
+        width:50%;
+        height:auto;
+    }
+    .promise {
+        font-size:1.7em;
+    }
+}
+
+/* Super large desktops, 1800px and up */
+@media (min-width: 1800px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size:1.5em;
+    }
+    body {
+        font-size:2.5em;
+    }
+
+    .promise {
+        font-size:2em;
     }
 }
